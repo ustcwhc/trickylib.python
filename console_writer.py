@@ -46,7 +46,9 @@ class ConsoleWriter(object):
                     sys.stdout.flush()
 
                     #set next print step
-                    step = long(total_count * ConsoleWriter._percentage_accuracy)
+                    step = long(
+                        total_count 
+                        * ConsoleWriter._percentage_accuracy)
                     if step <= 0:
                         step = 1
                     while ConsoleWriter._percentage_next_step <= finished_count:
