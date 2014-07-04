@@ -1,0 +1,4 @@
+1			 Programming is fun
+2			 When the work is done
+3			 if you wanna make your work also fun:
+4			 use Python!
