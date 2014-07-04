@@ -3,7 +3,11 @@
 #Functions:
 #1. WritePercentage(finished_count, total_count)
 
-import os,sys,string   
+# IMPORT
+import os
+import os.path
+import sys
+import string
 import time
 
 #CLASS
@@ -64,7 +68,44 @@ class ConsoleWriter(object):
         except Exception as e:
             print e	
 
+
+# ENUM CLASS
+class ConsoleColors:
+    '''Different colors use for console printing'''
+    PURPLE = '\033[95m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    DEFAULT = '\033[0m'
+
+
+# FUNCTION
+def print_with_color(content, color=ConsoleColors.YELLOW):
+    '''print the content with color'''
+    try:
+        # error: input is not a pre-defined color
+        if (color != ConsoleColors.PURPLE
+            and color != ConsoleColors.BLUE
+            and color != ConsoleColors.GREEN
+            and color != ConsoleColors.YELLOW
+            and color != ConsoleColors.RED
+            and color != ConsoleColors.DEFAULT):
+            raise Exception('The input color %s is not\
+                    pre-defined color in ConsoleColors')
+        
+        # print
+        print(
+            color + 
+            str(content) +
+            ConsoleColors.DEFAULT)
+    except Exception as e:
+        print e
+
+
 #MAIN FUNCTION			
 if __name__ == '__main__':
-    print ConsoleWriter.__doc__
-    
+    file = '/home/ustcwhc/Programs/python/poem.txt'
+    print_with_color(
+            [1, 2],
+            ConsoleColors.GREEN)
