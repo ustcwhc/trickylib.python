@@ -19,10 +19,7 @@ def trim_enter(line):
         return line
 
 
-# FUNCTION
-
 
 # MAIN FUNCTION 
 if __name__ == '__main__':
-    words = ['a', 'b', 'c']
-    print ' ### '.join(words)
+    PASS
