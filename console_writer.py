@@ -1,9 +1,8 @@
-#this is the branch from test
 #!/usr/bin/pyth
-#filename: consolewriter.py
-#Functions:
-#1. WritePercentage(finished_count, total_count)
-
+# filename: consolewriter.py
+# Functions:
+# 1. WritePercentage(finished_count, total_count)
+# 2. write_with_style(content, *console_styles)
 # IMPORT
 import os
 import os.path
@@ -24,7 +23,7 @@ class ConsoleWriter(object):
 
     # FUNCTION
     @staticmethod
-    def WritePercentage(finished_count, total_count):
+    def write_percentage(finished_count, total_count):
         try:
             # valid print argument
             if finished_count >= 0 and finished_count <= total_count:
@@ -132,8 +131,8 @@ def write_with_style(content, *console_styles):
             else:
                 ids.append(ConsoleStyles._item_dic[style])
         # merge strings
-        # former: '\033[style1;style2;...m' + content + '\033[0m'
-        # style + content + end
+        # format: '\033[style1;style2;...m' + content + '\033[0m'
+        # (style + content + end)
         print '\033[' + ';'.join(ids) + 'm' + content + '\033[0m'
 
     except Exception as e:
